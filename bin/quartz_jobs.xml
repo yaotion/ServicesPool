@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<job-scheduling-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0" xmlns="http://quartznet.sourceforge.net/JobSchedulingData">
+  <processing-directives />
+  <schedule>
+    <job>
+      <name>Clear</name>
+      <group>畅想</group>
+      <description>测试任务的描述</description>
+      <job-type>TF.Windows.Service.BYTMIS50.HistoryPlanClear, TF.Windows.Service.BYTMIS50, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <simple>
+        <name>Clear_Trigger</name>
+        <group>畅想</group>
+        <job-name>Clear</job-name>
+        <job-group>畅想</job-group>
+        <misfire-instruction>RescheduleNowWithExistingRepeatCount</misfire-instruction>
+        <repeat-count>-1</repeat-count>
+        <repeat-interval>1000</repeat-interval>
+      </simple>
+    </trigger>
+  </schedule>
+</job-scheduling-data>
